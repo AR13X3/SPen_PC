@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- One UI dark mode: AMOLED black background, lighter grouped surfaces -->
+    <color name="accent">#4E9BFF</color>
+    <color name="window_background">#000000</color>
+    <color name="group_background">#1C1C1E</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#A0A0A6</color>
+    <color name="divider">#2C2C2E</color>
+    <color name="section_header">#9A9AA0</color>
+
+    <color name="status_connected">#5CD675</color>
+    <color name="status_disconnected">#A0A0A6</color>
+</resources>

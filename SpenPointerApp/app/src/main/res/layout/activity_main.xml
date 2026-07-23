@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:colorBackground">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:colorBackground"
+        android:fitsSystemWindows="true"
+        app:elevation="0dp"
+        app:liftOnScroll="false">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:collapsedTitleTextAppearance="@style/TextAppearance.SpenPointer.CollapsedTitle"
+            app:contentScrim="?android:colorBackground"
+            app:expandedTitleMarginBottom="20dp"
+            app:expandedTitleMarginStart="24dp"
+            app:expandedTitleTextAppearance="@style/TextAppearance.SpenPointer.ExpandedTitle"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:statusBarScrim="?android:colorBackground"
+            app:title="S Pen Pointer"
+            app:titleCollapseMode="scale">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="24dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp">
+
+            <!-- ================= CONNECTION ================= -->
+            <TextView
+                style="@style/OneUiSectionHeader"
+                android:text="Connection" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/groupConnection"
+                style="@style/OneUiGroup">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- S Pen row -->
+                    <LinearLayout style="@style/OneUiRow">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/OneUiRowTitle"
+                                android:text="S Pen Remote" />
+
+                            <TextView
+                                android:id="@+id/textSpenStatus"
+                                style="@style/OneUiRowSubtitle"
+                                android:text="Disconnected" />
+
+                            <TextView
+                                android:id="@+id/textSpenFeatures"
+                                style="@style/OneUiRowSubtitle"
+                                android:text="Button: – · Air motion: –"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/switchSpen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical" />
+                    </LinearLayout>
+
+                    <View style="@style/OneUiDivider" />
+
+                    <!-- PC row -->
+                    <LinearLayout style="@style/OneUiRow">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/OneUiRowTitle"
+                                android:text="PC Listener" />
+
+                            <TextView
+                                android:id="@+id/textWsStatus"
+                                style="@style/OneUiRowSubtitle"
+                                android:text="Disconnected" />
+                        </LinearLayout>
+
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/switchPc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ================= PC ADDRESS ================= -->
+            <TextView
+                style="@style/OneUiSectionHeader"
+                android:text="PC address" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/groupAddress"
+                style="@style/OneUiGroup">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout style="@style/OneUiRow">
+
+                        <TextView
+                            style="@style/OneUiRowTitle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="IP address" />
+
+                        <EditText
+                            android:id="@+id/editHost"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:background="@null"
+                            android:gravity="end"
+                            android:hint="Not set"
+                            android:importantForAutofill="no"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:minWidth="140dp"
+                            android:textColor="@color/accent" />
+                    </LinearLayout>
+
+                    <View style="@style/OneUiDivider" />
+
+                    <LinearLayout style="@style/OneUiRow">
+
+                        <TextView
+                            style="@style/OneUiRowTitle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="Port" />
+
+                        <EditText
+                            android:id="@+id/editPort"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:background="@null"
+                            android:gravity="end"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:minWidth="80dp"
+                            android:textColor="@color/accent" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ================= CURSOR ================= -->
+            <TextView
+                style="@style/OneUiSectionHeader"
+                android:text="Cursor" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/groupCursor"
+                style="@style/OneUiGroup">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingVertical="8dp">
+
+                    <!-- Sensitivity -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="20dp"
+                        android:paddingTop="12dp">
+
+                        <TextView
+                            style="@style/OneUiRowTitle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="Sensitivity" />
+
+                        <TextView
+                            android:id="@+id/textSensitivityValue"
+                            style="@style/OneUiRowTitle"
+                            android:text="25"
+                            android:textColor="@color/accent" />
+                    </LinearLayout>
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/sliderSensitivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="16dp"
+                        android:stepSize="1.0"
+                        android:value="25.0"
+                        android:valueFrom="1.0"
+                        android:valueTo="100.0" />
+
+                    <View style="@style/OneUiDivider" />
+
+                    <!-- Smoothness -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="20dp"
+                        android:paddingTop="12dp">
+
+                        <TextView
+                            style="@style/OneUiRowTitle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="Smoothness" />
+
+                        <TextView
+                            android:id="@+id/textSmoothnessValue"
+                            style="@style/OneUiRowTitle"
+                            android:text="68"
+                            android:textColor="@color/accent" />
+                    </LinearLayout>
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/sliderSmoothness"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="16dp"
+                        android:stepSize="1.0"
+                        android:value="68.0"
+                        android:valueFrom="1.0"
+                        android:valueTo="100.0" />
+
+                    <View style="@style/OneUiDivider" />
+
+                    <!-- Center cursor -->
+                    <LinearLayout
+                        android:id="@+id/rowCenterCursor"
+                        style="@style/OneUiRow"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="16dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_target"
+                            app:tint="@color/accent" />
+
+                        <TextView
+                            style="@style/OneUiRowTitle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="Center cursor" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ================= STATUS ================= -->
+            <TextView
+                style="@style/OneUiSectionHeader"
+                android:text="Status" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/groupStatus"
+                style="@style/OneUiGroup">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        style="@style/OneUiRowSubtitle"
+                        android:text="Last event" />
+
+                    <TextView
+                        android:id="@+id/textLastEvent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="monospace"
+                        android:text="–"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,19 @@
+# Local / IDE
+.claude/
+.idea/
+*.iml
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.log
+.venv/
+venv/
+
+# Android / Gradle (also covered under SpenPointerApp/.gitignore)
+**/.gradle/
+**/build/
+**/local.properties
+**/.cxx/
+**/captures/
